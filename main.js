@@ -3,17 +3,18 @@ const{ createApp,ref } = Vue
 createApp({
     setup(){
         const product = ref('Boots')
-        const description = ref('abc')
         const image = ref('./assets/images/socks_green.jpg')
-        const goToCmu = () =>{window.location.href = 'https://www.camt.cmu.ac.th'}
+        const inStock = ref(true)
+        const inventory = ref(100)
+
+        const onSale = ref(false)
         return{
             product,
-            description,
             image,
-            goToCmu
+            inStock,
+            inventory,
+            onSale
         }
-        
-      
     }
 
 }).mount('#app')
