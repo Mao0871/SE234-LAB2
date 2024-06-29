@@ -4,7 +4,7 @@ createApp({
     setup(){
         const product = ref('Boots')
         const image = ref('./assets/images/socks_green.jpg')
-        const inStock = ref(true)
+        const inStock = ref(false)
         const inventory = ref(100)
 
         const details = ref([
@@ -25,9 +25,7 @@ createApp({
             image.value = variantImage
         }
         
-        function swichInStock(){
-            inStock.value = !inStock.value
-        }
+      
         return{
             product,
             image,
@@ -38,7 +36,7 @@ createApp({
             cart,
             addToCart,
             updateImage,
-            swichInStock
+            
         }
     }
 
