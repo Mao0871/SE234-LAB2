@@ -27,6 +27,8 @@ const productDisplay = {
 
             <button class="button" :disabled='!inStock' @click='addToCart'
 :class="{disabledButton: !inStock}">Add To Cart</button>
+            <button class="button" :disabled='!inStock' @click='delToCart'
+:class="{disabledButton: !inStock}">del To Cart</button>
 
 
         </div>
@@ -36,7 +38,8 @@ const productDisplay = {
     props:{
         premium:Boolean
     },
-    setup(props){
+    setup(props,{emit}){
+//10.1并未按要求删除下面的相关语句
         const shipping = computed(()=>{
             if(props.premium){
                 return 'Free'
@@ -70,7 +73,10 @@ const productDisplay = {
             return variants.value[selectedVariant.value].quantity
         })
         function addToCart(){
-            cart.value +=1
+            emit('add-to-cart',variants.value[selectedVariant.value].id)
+        }
+        function delToCart(){
+            emit('del-to-cart',variants.value[selectedVariant.value].id)
         }
         const title = computed(() =>{
             return brand.value+' '+product.value}
@@ -87,6 +93,7 @@ const productDisplay = {
             details,
             variants,
             addToCart,
+            delToCart,
             updateImage,
             updateVariant,
             shipping
