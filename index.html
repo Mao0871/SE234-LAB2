@@ -7,6 +7,7 @@
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
+    <script src="./components/ReviewForm.js"></script>
      <script src="./components/ProductDisplay.js"></script>
      <script src="./components/ProductDetails.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -19,13 +20,14 @@
 
         
         
-        <product-display :premium="premium" @add-to-cart="updateCart" @del-to-cart="updateCart2"></product-display>
+        <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
         
 
     </div>
 
     <!-- Import Js -->
-    <script src="./main.js"></script>
+    <script src="./main.js"></script>   
+    
 </body>
 
 </html>

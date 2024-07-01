@@ -27,14 +27,14 @@ const productDisplay = {
 
             <button class="button" :disabled='!inStock' @click='addToCart'
 :class="{disabledButton: !inStock}">Add To Cart</button>
-            <button class="button" :disabled='!inStock' @click='delToCart'
-:class="{disabledButton: !inStock}">del To Cart</button>
-
-
+           
         </div>
+        <review-form></review-form>
     </div>
 
     `,
+
+    
     props:{
         premium:Boolean
     },
