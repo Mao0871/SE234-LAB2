@@ -23,8 +23,7 @@ const reviewForm = {
             <option value="yes">Yes</option>
             <option value="no">No</option>
         </select>
-
-
+        
         <input class="button" type="submit" value="Submit">
     </form>`,
 
@@ -38,7 +37,8 @@ const reviewForm = {
 
 
         function onSubmit(){
-            if(form.name === '' || form.review === '' || form.rating === null || form.recommendded === false){
+            console.log('form', form)
+            if(form.name === '' || form.review === '' || form.rating === null || form.recommended === null){
                 alert('Review is incomplete. Please fill out every field.')
                 return
             }
@@ -47,6 +47,7 @@ const reviewForm = {
                 review: form.review,
                 rating: form.rating,
                 recommended: form.recommended
+
             }
             emit('review-submitted',productReview)
             form.name = ''

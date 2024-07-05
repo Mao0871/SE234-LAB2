@@ -90,6 +90,7 @@ const productDisplay = {
         }
         function addReview(review){
             reviews.value.push(review)
+            console.log('review', reviews)
         }
 
         return{
