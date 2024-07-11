@@ -19,6 +19,8 @@ const app = createApp({
     }
 })
 //lab2 1.9
+//lab2 1.9b
+
 app.component('product-display', productDisplay)
 app.component('product-details', productDetails)
 
